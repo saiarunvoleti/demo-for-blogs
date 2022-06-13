@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        #commute {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="piechart" style="width: 900px; height: 500px;">
+
+        </div>
+    </div>
+    <script>
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'time '],
+                ['Emails & Calls ', 45],
+                ['Clients Issuses ', 23],
+                ['Meetings ', 14],
+                ['Reporting ', 13],
+                ['Calender Management ', 5]
+            ]);
+
+            var options = {
+                title: 'The Most Time-Consuming Tasks'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+</htm1>
